@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+#gameScreen {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+    border-bottom: 10px solid green;
+    overflow: hidden;
+}
+
+
+#clouds {
+    position: absolute;
+    top: 5%;   
+    width: 400px;
+    animation: cloudsMoving 12s linear infinite;
+
+}
+
+#pipe {
+    position: absolute;
+    width: 50px;      
+    bottom: 0;     
+    animation: pipeAction 1s infinite linear;
+}
+
+#mario {
+    position: absolute;
+    width: 100px;
+    bottom: 0;
+}
+
+.marioJump {
+    animation: marioAction 500ms ease-out;
+}
+
+#gameOver {
+    position: absolute;
+    display: none;
+    top: 30%;
+    left: 20%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#gameOver #gameOverText {    
+    font-size: 80px;
+    text-shadow: 3px 3px 2px black;    
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    letter-spacing: 10px;
+       
+}
+
+#gameOver #btnRestart {
+    margin: 5% 0;
+    width: 50%;
+    line-height: normal;
+    padding: 2%;
+    border: 5px dotted black;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    background-color: #fbd000;
+    display: block;
+
+}
+
+
+
+
+@keyframes pipeAction {
+    from {
+        right: -50px
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes marioAction {
+    0% {
+        bottom: 0px;
+    }
+
+    45% {
+        bottom: 120px;
+    }
+
+    55% {
+        bottom: 120px;
+    }
+
+    100% {
+        bottom: 0px
+    }
+}
+
+@keyframes cloudsMoving {
+    from {
+        right: -400px;
+    }
+    to {
+        right: 100%;
+    }
+}
